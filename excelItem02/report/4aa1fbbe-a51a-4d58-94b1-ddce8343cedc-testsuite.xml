@@ -1,0 +1,91 @@
+<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1593886474194" stop="1593886474567">
+  <name>scripts</name>
+  <labels/>
+  <test-cases>
+    <test-case start="1593886474194" status="failed" stop="1593886474409">
+      <name>.Users.lgy.PycharmProjects.lgy.excelItem02.scripts.test01.Test01.test01[case0]</name>
+      <failure>
+        <message>AssertionError: 错误！响应 code：10000 预期 code：100001</message>
+        <stack-trace>self = &lt;scripts.test01.Test01 object at 0x11c051d30&gt;
+case = {'expect': {'code': 200, 'result': {'code': 100001, 'message': '操作成功！', 'success': True}}, 'headers': {'Content-Type': 'application/json'}, 'method': 'post', 'param_type': 'json', ...}
+
+    @pytest.mark.parametrize("case", tool.read_json())
+    def test01(self, case):
+        log.info("正在执行调用执行数据：{}".format(case))
+        try:
+            # 调用 执行接口方法
+            r = Api(case).run_method()
+            print("响应数据为：", r.text)
+            print("响应状态码：", r.status_code)
+            # 断言
+&gt;           common_assert(r, case)
+
+scripts/test01.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = &lt;Response [200]&gt;
+case = {'expect': {'code': 200, 'result': {'code': 100001, 'message': '操作成功！', 'success': True}}, 'headers': {'Content-Type': 'application/json'}, 'method': 'post', 'param_type': 'json', ...}
+
+    def common_assert(response, case):
+        log.info("正在调用断言公共方法")
+        # 获取响应数据
+        result = response.json()
+        # 获取预期数据
+        expect = case.get("expect")
+        # 断言 响应状态吗
+        assert response.status_code == expect.get("code"), "错误！响应 code：{} 预期code：{}".format(response.status_code,
+                                                                                            expect.get("code"))
+        # 断言 success
+        assert result.get("success") == expect.get("result").get("success"), "错误！响应 success：{} 预期 success：{}".format(
+            result.get("success"), expect.get("result").get("success"))
+        # 断言 code
+        assert result.get("code") == expect.get("result").get("code"), "错误！响应 code：{} 预期 code：{}".format(result.get("code"),
+                                                                                                         expect.get(
+                                                                                                             "result").get(
+&gt;                                                                                                            "code"))
+E       AssertionError: 错误！响应 code：10000 预期 code：100001
+
+tools/common_assert.py:22: AssertionError</stack-trace>
+      </failure>
+      <attachments>
+        <attachment source="f21d4a91-9481-4230-a7ae-f28bf0893c1e-attachment.txt" title="Captured log call" type="text/plain"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="93221-MainThread"/>
+        <label name="host" value="192.168.0.104"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1593886474410" status="passed" stop="1593886474490">
+      <name>.Users.lgy.PycharmProjects.lgy.excelItem02.scripts.test01.Test01.test01[case1]</name>
+      <attachments>
+        <attachment source="844010e1-ef50-42f2-8fc6-d634be434b93-attachment.txt" title="Captured log call" type="text/plain"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="93221-MainThread"/>
+        <label name="host" value="192.168.0.104"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1593886474491" status="passed" stop="1593886474567">
+      <name>.Users.lgy.PycharmProjects.lgy.excelItem02.scripts.test01.Test01.test01[case2]</name>
+      <attachments>
+        <attachment source="46f11223-5523-414f-a7a2-370fa9859e3c-attachment.txt" title="Captured log call" type="text/plain"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="93221-MainThread"/>
+        <label name="host" value="192.168.0.104"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+  </test-cases>
+</ns0:test-suite>

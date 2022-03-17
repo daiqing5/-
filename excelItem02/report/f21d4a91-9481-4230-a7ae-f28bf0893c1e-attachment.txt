@@ -1,0 +1,5 @@
+test01.py                   20 INFO     正在执行调用执行数据：{'path': '/api/sys/login', 'method': 'post', 'headers': {'Content-Type': 'application/json'}, 'param_type': 'json', 'params': {'mobile': '13800000002', 'password': '123456'}, 'expect': {'code': 200, 'result': {'success': True, 'code': 100001, 'message': '操作成功！'}}, 'x_y': [2, 12]}
+api.py                      48 INFO     正在调用运行接口方法
+api.py                      29 INFO     正在调用 post请求方法
+common_assert.py             7 INFO     正在调用断言公共方法
+test01.py                   32 ERROR    错误，原因：错误！响应 code：10000 预期 code：100001
